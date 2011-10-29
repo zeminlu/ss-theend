@@ -1,0 +1,303 @@
+\documentclass{sig-alternate}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{moreverb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancybox}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage{url}
+\usepackage{subfigure}
+%\usepackage[font=small,labelfont=bf]{caption}
+%\usepackage[a4paper, hmargin=0.75cm, vmargin=2.5cm]{geometry}
+\usepackage{textcomp}
+\usepackage{graphics}
+
+\pagestyle{plain}
+
+\begin{document}
+
+\pagenumbering{arabic}
+
+\title{Simulaci\'on de seguimiento de blancos a\'ereos}
+%\subtitle{Simulaci\'on de Sistemas - ITBA}
+
+\numberofauthors{4}
+
+\author{
+	\alignauthor{Pablo Alejandro Giorgi        
+		\email{pgiorgi@alu.itba.edu.ar}
+		\affaddr{ITBA}
+	}
+	\alignauthor{Nicol\'as Magni
+		\email{nmagni@alu.itba.edu.ar}
+		\affaddr{ITBA}
+	}
+	\and
+	\alignauthor{Santiago Jos\'e Samra
+		\email{ssamra@alu.itba.edu.ar}
+		\affaddr{ITBA}
+	}
+	\alignauthor{Mat\'ias Williams
+		\email{mwilliam@alu.itba.edu.ar}
+		\affaddr{ITBA}
+	}
+}
+
+\date{31 de Octubre de 2011}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\begin{keywords}
+
+\end{keywords}
+
+\section{INTRODUCCI\'ON}
+
+\section{PRIMERA PARTE}
+
+\subsection{Generador de L’Ecuyer}
+\label{lecuyer}
+
+El generador propuesto por L’Ecuyer en 1998 combina dos generadores lineales congruenciales (LCGs) para la generaci\'o de n\'umeros pseudoaleatorios. El algoritmo se compone de cinco pasos, tal como se describe a continuaci\'on: 
+\par
+$1$. Seleccionar una semilla $X_{1,0}$ en el rango $[1, 2147483562]$ para el 
+LCG$1$ y $X_{2,0}$ en el rango $[1, 2147483398]$ para el LCG$2$.
+
+$2$. Evaluar cada generador individual
+
+\begin{equation}
+\label{LCG1}
+X_{1,n+1} = 40014 \ X_{1,n} \ mod \ 2147483563
+\end{equation}
+
+\begin{equation}
+\label{LCG2}
+X_{2,n+1} = 40692 \ X_{2,n} \ mod \ 2147483399
+\end{equation}
+
+$3$. Computar
+
+\begin{equation}
+\label{xn}
+X_{n+1} = (X_{1,n+1} - X_{2,n+1}) \ mod \ 2147483562
+\end{equation}
+
+$4$. Computar
+
+\begin{equation}
+\label{un}
+U_{n+1} = 
+    \begin{cases}
+    \frac{X_{n+1}}{2147483563}, X_{n+1} > 0\\
+     \ \\
+    \frac{2147483562}{2147483563}, X_{n+1} = 0\\
+    \end{cases}
+\end{equation}
+
+$5$. Hacer $n = n + 1$ e ir a $2$.
+
+A partir de este algoritmo se generan 10000 n\'umeros pseudoaleatorios, usando como semillas $X_{1,0} = XXXXX$ y $X_{2,0} = XXXXX$ y sin reiniciar el algoritmo entre cada generaci\'on. Los resultados obtenidos son utilizados para construir una serie de gr\'aficos que permitan apreciar algunas caracter\'isticas de los n\'umeros que genera el algoritmo. Por un lado se puede observar de forma gr\'afica la condici\'on de pseudoaleatoriedad de los n\'umeros, y por otro, que los mismos poseen una distribuci\'on uniforme, lo cual se prueba en las secciones \ref{testChiCuadrado} y \ref{testKolmogorovSmirnov} utilizandos los m\'etodos descriptos en las mismas.
+\par
+En primer lugar, los n\'umeros obtenidos son divididos en 10 intervalos de clase del mismo ancho. Con las frecuencias obtenidas se construye el histograma que se muestra en la figura \ref{histograma}, el cual da un indicio de que los n\'umeros generados por el algoritmo tienen una distribuci\'on uniforme. La decisi\'on de elegir 10 intervalos de clase se basa en la proposici\'on de Nu\~nes (1985): la cantidad necesaria para que el histograma se vea lindo.
+\par
+Por otro lado, se analizan los numeros obtenidos para determinar la dependencia entre realizaciones. En la figura \ref{en2D} se grafican las duplas $(U_i , U_{i+1})$, y en la figura \ref{en3D} las ternas $(U_i, U_{i+1}, U_{i+2})$. Como se puede ver en ambas figuras, no se detecta a simple vista que las duplas o las ternas se dispongan en forma de hiperplanos (rectas en el caso de las duplas y planos en el caso de las ternas), sino que lo hacen de forma tal que la salida parezca aleatoria. Por otro lado, tampoco se evidencian \'areas vac\'ias, o \'areas con mayor concentraci\'on de puntos que otras.
+
+\begin{figure}[t]
+\centering
+%\includegraphics[width=3.2in]{histoLecuyer}
+\caption{Histograma realizado en base a 10000 n\'umeros generados con el generador de L'Ecuyer divididos en 10 intervalos de clase}
+\label{histograma}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+%\includegraphics[width=3.2in]{histoLecuyer}
+\caption{Duplas $(U_i , U_{i+1})$, constru\'idas en base a 10000 n\'umeros generados con el algoritmo de L'Ecuyer}
+\label{en2D}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+%\includegraphics[width=3.2in]{histoLecuyer}
+\caption{Ternas $(U_i, U_{i+1}, U_{i+2})$, constru\'idas en base a 10000 n\'umeros generados con el algoritmo de L'Ecuyer}
+\label{en3D}
+\end{figure}
+
+\subsection{Test $\chi^2$}
+\label{testChiCuadrado}
+
+En las figuras \ref{en2D} y \ref{en3D} se puede apreciar de forma gr\'afica que los n\'umeros generados por el algoritmo de L'Ecuyer tienen una distribuci\'on uniforme. Para poder afirmar o refutal tal hip\'otesis, se puede utilizar el test $\chi^2$, el cual determina con un nivel de significaci\'on $\alpha$ (fijado en $5\%$), si es razonable suponer que la distribuci\'on observada de las 10000 muestras generadas en la secci\'on \ref{lecuyer} es consistente con que la variable tenga una distribuci\'on uniforme. Las hip\'otesis del test son:
+
+\begin{itemize}
+ \item {$H_{0}$:} $\chi_{0}^2 < \chi_{n-1,\alpha}$ (Los n\'umeros obtenidos mediante el m\'etodo de L'Ecuyer est\'an uniformemente distribuidos)
+ \item {$H_{1}$:} $\chi_{0}^2 \ge \chi_{n-1,\alpha}$ (Los n\'umeros obtenidos mediante el m\'etodo de L'Ecuyer no est\'an uniformemente distribuidos)
+\end{itemize}
+
+Para la prueba se toman 10 intervalos de clase, determinando as\'i 9 grados de libertad. Para estos par\'ametros, se obtiene de tablas el valor cr\'itico $\chi_{n-1,\alpha}^{2} = 16.919$. El estad\'istico $\chi_{0}^{2}$ se computa mediante la f\'ormula de la ecuaci\'on \ref{eqn1}.
+
+\begin{equation}
+\label{eqn1}
+ \chi_{0}^{2} = \sum_{i=1}^{n} \frac{(O_i - E_i)^2}{E_i}
+\end{equation}
+
+y resulta $\chi_{0}^{2} = XXXXXXXXXX$, raz\'on por la cual se acepta la hip\'otesis nula $H_0$.
+
+\subsection{Test Kolmogorov-Smirnov}
+\label{testKolmogorovSmirnov}
+
+Dado que el test de la secci\'on \ref{testChiCuadrado} no rechaza la hip\'otesis de que la muestra tiene distribuci\'on uniforme, se realiza el test Kolmogorov-Smirnov.  Las hip\'otesis utilizadas para esta prueba son:
+
+\begin{itemize}
+ \item {$H_{0}$:} $D < D_{\alpha}$ (Los n\'umeros obtenidos mediante el m\'etodo de L'Ecuyer est\'an uniformemente distribuidos)
+ \item {$H_{1}$:} $D \ge D_{\alpha}$ (Los n\'umeros obtenidos mediante el m\'etodo de L'Ecuyer no est\'an uniformemente distribuidos)
+\end{itemize}
+
+Donde $D$ es el resultado de la prueba y $D_{\alpha}$ es el valor cr\'itico correspondiente a los par\'ametros de la misma.
+El valor $D$ es computado con la f\'ormula de la ecuaci\'on \ref{eqn2}.
+\begin{equation}
+\label{eqn2}
+ D = max(D^{+}, D^{-})
+\end{equation}
+
+siendo
+
+\begin{align}
+ D^{+} &= max(\frac{i}{n}-x_i)\\
+ D^{-} &= max(x_i - \frac{i-1}{n})
+\end{align}
+
+donde $x_i$ es el i-\'esimo valor de los calculados por el m\'etodo de L'Ecuyer,  y el \'indice $i$ es la cantidad de realizaciones menores que $x_i$ de la muestra de 10000 n\'umeros obtenida en la secci\'on \ref{lecuyer}.
+Realizando los c\'alculos, resulta: $D = XXXXXX$.
+El valor cr\'itico, para una significaci\'on de $\alpha = 0.05$ y para 10 intervalos de clase, es $D_{0.05} = 0.4092$ [NEAVE,1981]. Luego como $D < D_{0.05}$, no se puede rechazar $H_0$ y se acepta que la muestra tiene distribuci\'on uniforme.
+
+\subsection{Distribuci\'on triangular}
+\label{triangularSec}
+
+En los experimentos de simulaci\'on suele ser necesario generar secuencias de n\'umeros pseudoaleatorios distribu\'idos de acuerdo a una funci\'on $F(x)$ arbitraria.
+A continuaci\'on se utiliza la t\'ecnica de la transformada inversa aplicada a la funci\'on de densidad triangular dada por:
+
+\begin{equation}
+\label{triangularEc}
+f_{X}(x) = 
+    \begin{cases}
+    \frac{2(x-a)}{(b-a)(c-a)}, &  a \le x \le b\\
+     \ \\
+    \frac{2(c-x)}{(c-b)(c-a)}, & b < x \le c\\
+     \ \\
+     0, & \text{en otro lado}\\
+    \end{cases}
+\end{equation}
+Integrando la ecuaci\'{o}n \ref{triangularEc} se obtiene la funci\'on de  distribuci\'on $F_{X}(x)$:
+
+\begin{equation}
+\label{triangularIntegrada}
+F_{X}(x) = 
+    \begin{cases}
+    0, & x < a\\
+     \ \\
+    \frac{x^{2} - 2ax + a^{2}}{(b-a)(c-a)}, &  a \le x \le b\\
+     \ \\
+    \frac{b-a}{c-a} + \frac{2cx - x^{2} - b(2c-b)}{(c-b)(c-a)}, & b < x \le c\\
+     \ \\
+     1, & x > c\\
+    \end{cases}
+\end{equation}
+
+Por \'ultimo, la variable aleatoria $X$ resulta:
+
+\begin{equation}
+\label{vaconftriangular}
+X = 
+    \begin{cases}
+    a + \sqrt{U(c-a)(b-a)}, 0 \leq U \leq \frac{b-a}{c-a} \\
+    \ \\
+    c - \sqrt{(c-b)^{2} - U(c-b)(c-a) + (b-a)(c-b)}, \\ \frac{b-a}{c-a} < U \leq 1 \\
+    \end{cases}
+\end{equation}
+
+Aplicando esta funci\'on de transformaci\'on al set de 10000 valores obtenidos en la secci\'on \ref{lecuyer}, se obtienen 10000 realizaciones de una variable pseudoaleatoria con distribuci\'on triangular. Dividiendo las realizaciones en 10 intervalos de clase, y graficando las frecuencias se obtiene el histograma que se muestra en la figura \ref{histogramaTriang}.
+
+\begin{figure}[t]
+\centering
+%\includegraphics[width=3.2in]{histoLecuyer}
+\caption{Histograma de una realizaci\'on de una variable pseudoaleatoria con distribuci\'on de probabilidad triangular con par\'ametros $a=0$, $b=1$ y $c=3$; obtenida a partir de una realizaci\'on de una variable con distribuci\'on uniforme.}
+\label{histogramaTriang}
+\end{figure}
+
+\subsection{Distribuci\'on exponencial}
+\label{exponencialSec}
+
+Tal como se puede observar en la secci\'on \ref{triangularSec}, se puede generar una serie de n\'umeros pseudoaleatorios con una distribuci\'on elegida seg\'un la necesidad. En esta secci\'on se muestra c\'omo generar una serie de n\'umeros con distribuci\'on exponencial.
+
+La funci\'on de la ecuaci\'on \ref{expEqn1} corresponde a la funci\'on densidad de probabilidad de una variable aleatoria con distribuci\'on exponencial.
+
+\begin{align}
+\label{expEqn1}
+  f_{X}(x) = \left\{
+  \begin{array}{rl}
+	&\lambda e^{-\lambda x} \hspace{0.5cm} 0 \le x\\\\
+	&0 \hspace{0.9 cm} Otro \hspace{0.1cm} caso
+  \end{array} \right.
+\end{align}
+
+Se integra y se calcula la funci\'on inversa para obtener la expresi\'on de la ecuaci\'on \ref{expEqn2}
+
+\begin{align}
+\label{expEqn2}
+ x_i = \left\{
+  \begin{array}{rl}
+	&0 \hspace{1.5 cm} u_i = 0\\\\
+	&-ln(u_i) \hspace{0.5cm} Otro \hspace{0.1cm} caso
+  \end{array} \right.
+\end{align}
+
+la cual corresponde a una variable aleatoria con distribuci\'on exponencial.
+
+\subsection{Distribuci\'on uniforme parametrizada}
+\label{uniformeParamSec}
+
+Para convertir una variable aleatoria con distribuci\'on uniforme $U[0,1]$ en otra variable aleatoria con distribuci\'on $U[a, b]$, se puede utilizar la expresi\'on de la ecuaci\'on \ref{eqnUnif1}.
+
+\begin{equation}
+\label{eqnUnif1}
+ x_i = (b-a)u_i + a
+\end{equation}
+
+\section{SEGUNDA PARTE}
+\subsection{Propulsi\'on WARP}
+\par
+La nave USS Enterprise posee un sistema de propulsi\'on WARP que consiste en dos propulsores, que son alimentados  mediante un \emph{N\'ucleo WARP}. Dicho n\'ucleo se encuentra en el interior de un reactor donde se producen las reacciones de aniquilicaci\'on materia-antimateria, moderadas por cristales de dilitio. Para procesar los cristales, se utiliza una c\'amara de 	controlada, llamada \emph{Matriz de Dilitio}. Este subsistema posee redundancia para evitar fallas. Por \'ultimo, todo el sistema est\'a controlado por la \emph{Computadora Central}, que posee un sistema operativo antiguo, de finales del siglo XX, el cual sufre fallos dado por ca\'ida conocidos como BSTF (\emph{Blue Screen Threat Failure}).
+\par
+El tiempo de propulsi\'on WARP de la nave es una variable aleatoria T, definida en funci\'on de las variables aleatorias que representan las fallas de las componentes del sistema.
+\par
+En primer lugar, cada propulsor posee un tiempo de operaci\'on que se puede representar utilizando una variable aleatoria con distribuci\'on exponencial con tiempo medio de 3 d\'ias. Entonces, se pueden definir las variables aleatorias $X_1$ y $X_2$ con distribuci\'on exponencial con $\lambda=1/72$ horas.
+\par
+En segundo lugar, el tiempo de operaci\'on entre fallos del n\'ucleo WARP es de 72 horas, pudiendo variar linealmente hasta en 12 horas. Por lo tanto, se puede plantear como una variable aleatoria $X_3$ con distribuci\'on triangular con $a = 60$ horas, $b = 72$ horas y $c = 84$ horas.
+\par
+En tercer lugar, las c\'amaras de Dilitio oper\'an de forma tal que la C\'amara Principal tiene un tiempo de operaci\'on entre 20 y 50 horas, uniformemente distribuido. Entonces, se la puede representar como una variable aleatoria $X_4$ con distribuci\'on uniforme, entre 20 y 50 horas ($U[20,50]$). Adem\'as, de esta C\'amara, el sistema cuenta con una C\'amara Redundante que tambi\'en puede fallar. La misma puede ser representada mediante una variable aleatoria $X_5$ uniformemente distribuida entre 5 y 30 horas ($U[5,30]$).
+\par
+Por \'ultimo, la Computadora Central posee un sistema operativo antiguo y con fallas conocidas, que termina generando problemas en todo el sistema de propuls\'on, por lo cual es necesario representar mediante una variable aleatoria. ComoeEl intervalo de tiempo entre BSTF’s (fallas del sistema operativo) es una variable aleatoria normalmente distribuida con media de 2 dias y varianza de 5 horas, se la puede representar utilizando una variable aleatoria $X_6$, con distribuci\'on normal con media 48 horas y varianza 5 horas. ($N[48,5]$).
+\par
+Una vez representadas todas las componentes del sistema como variables aleatorias, se puede definir la variable aleatoria $T$ tiempo de operaci\'on del sistema como:
+\begin{equation}
+T = min\{max\{X_1,X_2\},X_3,max\{X_4,X_5\},X_6\}
+\end{equation}
+Conociendo el modelo de las variables $X_i$, resulta que el tiempo medio de funcionamiento del sistema de propulsi\'on es:
+\begin{equation}
+\mathcal{E}\{T\} = \mathcal{\int\int\int\int\int\int_D} min\{max\{x_1,x_2\},x_3,max\{x_4,x_5\},x_6\} * [ACA FALTAN UN PAR DE COSAS DE LAS FILMINAS]
+\end{equation}
+
+
+
+
+\end{document}
