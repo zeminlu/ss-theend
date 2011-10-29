@@ -1,0 +1,142 @@
+\documentclass{SPANISH_acm_proc_article-sp}
+
+\begin{document}
+
+\title{Visitando la Plataforma Continental Argentina}
+\subtitle{}
+
+\numberofauthors{5}
+
+\author
+{
+	%1st author
+	\alignauthor
+    Gustavo Maldonado \\
+	\affaddr{Instituto Tecnol\'ogico de Buenos Aires (ITBA)} \\
+	\affaddr{Buenos Aires, Argentina}\\
+	\email{gmaldona@alu.itba.edu.ar}
+	%2nd author
+	\alignauthor
+	Guido Marucci Blas \\
+    \affaddr{Instituto Tecnol\'ogico de Buenos Aires (ITBA)} \\
+	\affaddr{Buenos Aires, Argentina}\\
+	\email{gmarucci@alu.itba.edu.ar}
+	%3rd author
+	\alignauthor	
+    Santiago Perez De Rosso \\
+    \affaddr{Instituto Tecnol\'ogico de Buenos Aires (ITBA)} \\
+	\affaddr{Buenos Aires, Argentina}\\
+	\email{sperezde@alu.itba.edu.ar}
+	\and
+	%4th author
+	\alignauthor
+	Nicolas Purita \\
+    \affaddr{Instituto Tecnol\'ogico de Buenos Aires (ITBA)} \\
+	\affaddr{Buenos Aires, Argentina}\\
+	\email{npurita@alu.itba.edu.ar}	
+	\and
+    %5th author
+    \alignauthor
+    Luciano Zemin \\
+    \affaddr{Instituto Tecnol\'ogico de Buenos Aires (ITBA)} \\
+	\affaddr{Buenos Aires, Argentina}\\
+	\email{lzemin@alu.itba.edu.ar}
+}
+
+\maketitle
+
+\section*{RESUMEN}
+En este art\'iculo se analiza el per\'iodo de evoluci\'on y su funci\'on densidad de 
+probabilidad de un \emph{modelo ecol\'ogico presa - predador} a partir de una muestra
+inicial y de las caracter\'isticas evolutivas del sistema (sus \emph{par\'ametros bi\'oticos}).
+En particular, se analiza el caso de la zona sobre la Plataforma Continental Argentina
+donde la especie \textit{Tibur\'on Pintarrojo} preda a la especie \textit{Salm\'on de Mar},
+siendo esta \'ultima un importante recurso econ\'omico pesquero nacional.
+
+\section*{Palabras Clave}
+Modelo de \textit{Lokta-Volterra-Ancona}, \textit{Montecarlo}, \textit{Salm\'on de Mar},
+\textit{Tibur\'on Pintarrojo}
+
+\section{INTRODUCCI\'ON}
+Es de una gran importancia econ\'omica aparte de biol\'ogica el estudio de la din\'amica
+presa-predador de ciertas especies de recurso econ\'omico pesquero. En el presente art\'iculo
+se analiza en particular el caso de la zona sobre la Plataforma Continental Argentina donde
+la especie \emph{Salm\'on de Mar (Pseudopercis semifasciata)} es capturada desde una
+latitud correspondiente a la desembocadura del R\'io Colorado, hasta el Golfo de San Juli\'an.
+El \emph{Tibur\'on Pintarrojo (Haleaeulurus bivius)} es una de las cincuenta especies que
+habitan la Plataforma Continental Argentina. Dicha especia preda al Salm\'on de Mar.
+Ambas poblaciones est\'an en equilibrio din\'amico, pero no se tiene la suficiente 
+cantidad de datos para estimar el ciclo poblacional del recurso, en este caso, el salm\'on.
+El conocimiento de dicho ciclo, el cual constituye el per\'iodo de variaci\'on poblacional,
+es un par\'ametro de fundamental importancia econ\'omica adem\'as de biol\'ogica. Ya que
+este permite estimar los periodos de vedas o disminuci\'on de las tazas de captura
+econ\'omica.
+
+En la secci\'on \ref{sec:modelo} se presenta el modelo utilizado a lo largo del art\'iculo,
+en la secci\'on \ref{sec:estimacion} se detalla el proceso de obtenci\'on de la
+estimaci\'on de la funci\'on densidad de probabilidad del \emph{Per\'iodo}. Finalmente,
+en la secci\'on \ref{sec:resultados} se presentan los resultados obtenidos y las
+conclusiones finales.
+
+\section{Modelizaci\'on del sistema}
+\label{sec:modelo}
+El sistema se modela utilizando el modelo de \textit{Lokta-Volterra-Ancona}. Se considera que el predador
+se alimenta exclusivamente de la presa, mientras que esta \'ultima se alimenta de recursos ilimitados
+que se encuentran en su h\'abitat. El ambiente no influye sobre el sistema, asi como el sexo o
+el estado de salud de los individuos.\\
+En las ecuaciones \ref{eq:modelo1} y \ref{eq:modelo2} se puede ver el modelo resultante:
+\begin{equation}
+\label{eq:modelo1}
+\dot{x} = \lambda x - axy
+\end{equation}
+\begin{equation}
+\label{eq:modelo2}
+\dot{y} = bxy - \mu y
+\end{equation}
+donde $x(y)$ e $y(t)$ representan las poblaciones de la especie presa y predador, 
+respectivamente. Las constantes $\lambda$, $\mu$ representan las tasa de crecimiento
+poblacional de presas y predadores respectivamente, en ausencia de sus contrapartes.
+Las constantes positivas $a$ y $b$ representan las tasas de encuentros perjudiciales para 
+las presas y beneficiosos para predadores.\\
+
+
+\section{Estimaci\'on de la funci\'on densidad de probabilidad del \emph{Per\'iodo}}
+\label{sec:estimacion}
+Con el objetivo de estimar la funci\'on densidad de probablidad del \emph{Per\'iodo}
+se utiliza el m\'etodo de \textit{Monte Carlo}. El m\'etodo de \textit{Monte Carlo} es una metodolog\'ia
+para obtener, mediante simulaci\'on, una muestra estad\'istica y computar estimadores
+de par\'ametros para poblaciones mayores \textit{(Diaz, 2011)}. Las simulaciones fueron
+realizadas con \textit{Matlab}. Para la resoluci\'on de las ecuaciones diferenciales se
+ utiliza \textit{ODE45} que es el recomendado en
+\textit{Matlab},est\'a basado en la f\'ormula expl\'icita de Runge-Kutta (4, 5) Dormand-Prince. Utiliza seis
+funciones de valuaci\'on para calcular soluciones de precisi\'on de 4to y 5to orden. Este m\'etodo se considera
+adaptativo ya que var\'ia el tama\~no de paso de acuerdo al error \textit{(Mathworks, 2011)}.
+
+Asumiendo un valor estimado de $ \hat b = 0.0035 \, $a\~nos$^{-1} $ y suponiendo que
+$ a = (0.02 \, \underline{+} \, 0.001) \, $a\~nos$^{-1}$ uniformemente distribuida,
+$ \lambda = N(1.5 \, $a\~nos$^{-1}, 0.10) $ es una funci\'on de distribuci\'on de probabilidad normal de media
+$ 1.5 \, $a\~nos$^{-1} $ con un desv\'io est\'andar porcentual del $ 10\% $ y
+$ \mu = N(1.2 \, $a\~nos$^{-1}, 0.05) $ es una funci\'on de distribuci\'on de probabilidad normal de media [ESTO ESTA BIEN?]
+$ 1.2 \, $a\~nos$^{-1} $ con un desv\'io lineal porcentual de $ 5\% $ se estima
+la funci\'on densidad de probabilidad del \emph{Per\'iodo}. El resultado obtenido al correr
+[INSERTE NUMERO DE SIMULACIONES AQUI] se puede ver en la Figura \ref{fig:mc}.
+
+A partir del resultado obtenido se estima la probabilidad de que el per\'odo del ciclo
+poblacional sea menor o igual que 1, 5, 10 y 15 a\~nos obteniendose como resultado
+[INSERTE RESULTADOS AQUI] ... respectivamente.
+\begin{figure}
+\centering
+\label{fig:mc}
+%\epsfig{file=mc.eps, scale=0.4}
+\caption{Funci\'on densidad de probabilidad del periodo. Cantidad de ocurrencias versus per\'iodo.}
+\end{figure}
+
+\section{Resultados y conclusiones}
+\label{sec:resultados}
+Inserte resultados y conclusiones aqu\'i.
+\section*{REFERENCIAS}
+\textit{Diaz, "Simulaci\'on de Montecarlo", 2011} \\
+\textit{Mathworks, "http://www.mathworks.com/help/techdoc/ref/ode45.html", 2011}
+\end{document}
+
+
