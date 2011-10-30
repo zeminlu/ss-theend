@@ -46,9 +46,7 @@
 \maketitle
 
 \section*{RESUMEN}
-En este art\'iculo se analiza el per\'iodo de evoluci\'on y su funci\'on densidad de 
-probabilidad de un \emph{modelo ecol\'ogico presa - predador} a partir de una muestra
-inicial y de las caracter\'isticas evolutivas del sistema (sus \emph{par\'ametros bi\'oticos}).
+En este art\'iculo se analiza el generador de n\'umeros aleatorios utilizado por la librer\'ia estandar de Java, per\'iodo de evoluci\'on y su funci\'on densidad de probabilidad de un \emph{modelo ecol\'ogico presa - predador} a partir de una muestra inicial y de las caracter\'isticas evolutivas del sistema (sus \emph{par\'ametros bi\'oticos}).
 En particular, se analiza el caso de la zona sobre la Plataforma Continental Argentina
 donde la especie \textit{Tibur\'on Pintarrojo} preda a la especie \textit{Salm\'on de Mar},
 siendo esta \'ultima un importante recurso econ\'omico pesquero nacional.
@@ -78,6 +76,60 @@ estimaci\'on de la funci\'on densidad de probabilidad del \emph{Per\'iodo}. Fina
 en la secci\'on \ref{sec:resultados} se presentan los resultados obtenidos y las
 conclusiones finales.
 
+\section{Generaci\'on de N\'umeros aleatorios}
+A continuaci\'on se analiza el generador de n\'umeros aleatorios que usa la librer\'ia est\'andar
+de Java en el m\'etodo \textit{nextDouble} en la clase java.util.Random. La implementaci\'on de dicho 
+algoritmo est\'a basado en un generador de n\'umeros aleatorios congruencial lineal (GCL) con per\'iodo
+de longitud $2^{48}$. Cada salida del generador se construye de la siguiente forma:
+
+\begin{eqnarray}
+	x_{i + 1} & = & (25214903917x_{i} + 11) \quad mod \  2^{48} \\
+	u_{i} & = & x_{i} / 2^{48}
+\end{eqnarray}
+
+Para el an\'alisis del GCL se utiliza la semilla $s_{0} = 1320005715$ y se generan $n = 10000$ n\'umeros pseudo-aleatorios sin reiniciar el generador. En la figura (\ref{fig:histRandom}) se muestra un histograma con la frecuencia de aparici\'on de los n\'umeros pseudo-aleatorio los cuales fueron agrupados en 10 intervalos de clase. . En la figura (\ref{fig:random2D}) se muestra la representaci\'on de los pares $(u_{i}, u_{i+1})$ y en la figura (\ref{fig:random3D}) las ternas $(u_{1}, u_{i+1}, u_{i+2})$. 
+
+\begin{figure}
+\centering
+\epsfig{file=histRandom.eps, scale=0.55}
+\caption{Frecuencia de aparici\'on de los n\'umeros pseudo-aleatorio}
+\label{fig:histRandom}
+\end{figure}
+
+\begin{figure}
+\centering
+\epsfig{file=randomize2D.eps, scale=0.55}
+\caption{Representaci\'on de los pares $(u_{i}, u_{i+1})$}
+\label{fig:random2D}
+\end{figure}
+
+\begin{figure}
+\centering
+\epsfig{file=randomize3D.eps, scale=0.55}
+\caption{Ternas $(u_{1}, u_{i+1}, u_{i+2})$}
+\label{fig:random3D}
+\end{figure}
+
+Al observar las figuras \ref{fig:histRandom}, \ref{fig:random2D} y \ref{fig:random3D} se desea ver que la hip\'otesis, los n\'umeros pseudo-aleatorio generador por el GCL est\'an uniformemente distribuidos, no es rechazada. Para esto se realizan las pruebas de \textbf{Kolmogorov-Smirnov} y \textbf{Chi Cuadrado}.
+
+\subsection{Kolmogorov-Smirnov}
+Se realiza la prueba de Kolmogorov-Smirnov con un nivel de significaci\'on $\alpha = 0.05$ y 10 intervalos de clase. Para estos valores el valor cr\'itico es $D_{\alpha} = 0,4092$. La hip\'otesis a ver que no es rechazada es 
+
+\begin{equation}
+		H_{0}: D < D_{\alpha}
+\end{equation}
+
+Los n\'umeros generados por el GCL tienen una distribuci\'on uniforme. Usando la semilla $s_{0}$ para generar los $n$ n\'umeros aleatorios el c\'omputo del estad\'istico es $D = 0.100$. Entonces la hip\'otesis $H_{0}$ no es rechazada. 
+
+\subsection{Chi-Cuadrado}
+Se realiza la prueba de Chi-Cuadrado con un nivel de sinificaci\'on $\alpha = 0.05$, 10 intervalos de clase y 9 grados de libertad. Para estos valores el valor cr\'itico es $\chi_{n-1, \alpha} = 16.92$. La hip\'otesis a ver que no es rechazada es 
+
+\begin{equation}
+		H_{1}: \chi^2 < \chi^2_{n - 1, \alpha}
+\end{equation}
+
+Como el c\'omputo del estad\'istico es $\chi^2_{0} = 6.088000$, entonces las hip\'otesis $H_{1}$ no es rechazada.
+
 \section{Modelizaci\'on del sistema}
 \label{sec:modelo}
 El sistema se modela utilizando el modelo de \textit{Lokta-Volterra-Ancona}. Se considera que el predador
@@ -100,7 +152,8 @@ Las constantes positivas $a$ y $b$ representan las tasas de encuentros perjudici
 las presas y beneficiosos para predadores.\\
 
 
-\section{Estimaci\'on de la funci\'on densidad de probabilidad del \emph{Per\'iodo}}
+\section{Estimaci\'on de la funci\'on densidad de probabilidad del Per\'iodo}
+
 \label{sec:estimacion}
 Con el objetivo de estimar la funci\'on densidad de probablidad del \emph{Per\'iodo}
 se utiliza el m\'etodo de \textit{Monte Carlo}. El m\'etodo de \textit{Monte Carlo} es una metodolog\'ia
@@ -116,24 +169,35 @@ Asumiendo un valor estimado de $ \hat b = 0.0035 \, $a\~nos$^{-1} $ y suponiendo
 $ a = (0.02 \, \underline{+} \, 0.001) \, $a\~nos$^{-1}$ uniformemente distribuida,
 $ \lambda = N(1.5 \, $a\~nos$^{-1}, 0.10) $ es una funci\'on de distribuci\'on de probabilidad normal de media
 $ 1.5 \, $a\~nos$^{-1} $ con un desv\'io est\'andar porcentual del $ 10\% $ y
-$ \mu = N(1.2 \, $a\~nos$^{-1}, 0.05) $ es una funci\'on de distribuci\'on de probabilidad normal de media [ESTO ESTA BIEN?]
-$ 1.2 \, $a\~nos$^{-1} $ con un desv\'io lineal porcentual de $ 5\% $ se estima
+$ \mu = N(1.2 \, $a\~nos$^{-1}, 0.05) $ es una funci\'on de distribuci\'on de probabilidad normal de media $ 1.2$, a\~nos$^{-1}$ con un desv\'io lineal porcentual de $5\%$ se estima
 la funci\'on densidad de probabilidad del \emph{Per\'iodo}. El resultado obtenido al correr
-[INSERTE NUMERO DE SIMULACIONES AQUI] se puede ver en la Figura \ref{fig:mc}.
+15434 simulaciones se puede ver en la Figura (\ref{fig:histo}) en la cual se deduce que la funci\'on densidad de probabilidad se aproxima a una funci\'on de distribuci\'on $N(5.87$a\~nos$^{-1}, 0.19)$ con un desv\'io est\'andar del 0.19\%.\\
+
+En la figura (\ref{fig:presa}), la cual muestra el tama\~no de la poblaci\'on de la presa a lo largo de los a\~nos, se puede verificar que el per\'iodo se aproxima a \textit{6}.
 
 A partir del resultado obtenido se estima la probabilidad de que el per\'odo del ciclo
 poblacional sea menor o igual que 1, 5, 10 y 15 a\~nos obteniendose como resultado
 [INSERTE RESULTADOS AQUI] ... respectivamente.
 \begin{figure}
 \centering
-\label{fig:mc}
-%\epsfig{file=mc.eps, scale=0.4}
-\caption{Funci\'on densidad de probabilidad del periodo. Cantidad de ocurrencias versus per\'iodo.}
+\label{fig:histo}
+\epsfig{file=histPosta.eps, scale=0.4}
+\caption{Funci\'on densidad de probabilidad del per\'iodo. Cantidad de ocurrencias versus per\'iodo.}
+\end{figure}
+
+\begin{figure}
+\centering
+\label{fig:presa}
+\epsfig{file=presa.eps, scale=0.4}
+\caption{Tama\~no de la poblaci\'on de la presa en funci\'on del tiempo}
 \end{figure}
 
 \section{Resultados y conclusiones}
 \label{sec:resultados}
 Inserte resultados y conclusiones aqu\'i.
+
+A partir de la figura (\ref{fig:histo}) se deduce que la variable aleatoria del per\'iodo tiene un comportamiento con distribuci´\'on \textit{Normal}. 
+
 \section*{REFERENCIAS}
 \textit{Diaz, "Simulaci\'on de Montecarlo", 2011} \\
 \textit{Mathworks, "http://www.mathworks.com/help/techdoc/ref/ode45.html", 2011}
