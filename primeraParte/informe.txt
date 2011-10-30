@@ -1,0 +1,26 @@
+A continuación se analiza el generador de números aleatorios que usa la librería estándar
+de Java en el método nextDouble en la clase java.util.Random. La implementación de dicho 
+algoritmo está basado en un generador de números aleatorios congruencial lineal con período
+de longitud $2^48$. Cada salida del generador se construye de la siguiente forma:
+
+	x_{i + 1} = (25214903917x_{i} + 11) mod 2^48
+
+	u_{i} = x_{i} / 2^48
+
+Para el análisis del GCL se utiliza la semilla $s_{0} = 1320005715$ y se generan $n = 10000$ números pseudo-aleatorios sin reiniciar el generador. En la FIGURA1 se muestra un histograma con la frecuencia de aparición de los números pseudo-aleatorio los cuales fueron agrupados en X intervalos de clase. . En la FIGURA2 se muestra la representación de los pares $(u_{i}, u_{i+1})$ y en la FIGURA3 las ternas $(u_{1}, u_{i+1}, u_{i+2})$. Los números aleatorios generados por el GCL están uniformemente distribuidos.	
+
+Al observar la FIGURA1, FIGURA2 y FIGURA3 se desea ver que la hipótesis, los números pseudo-aleatorio generador por el GCL están uniformemente distribuidos, no es rechazada. Para esto se realizan las pruebas de Kolmogorov-Smirnov y Chi Cuadrado.
+
+Kolmogorov-Smirnov
+Se realiza la prueba de Kolmogorov-Smirnov con un nivel de significación $\alpha = 0.05$ y 10 intervalos de clase. Para estos valores el valor crítico es $D_{\alpha} = 0,4092$. La hipótesis a ver que no es rechazada es 
+
+	H_{0}: D < D_{\alpha} (Los números generados por el GCL tienen una distribución uniforme)
+
+Usando la semilla $s_{0}$ para generar los $n$ números aleatorios el cómputo del estadístico es $D = 0.100$. Entonces la hipótesis $H_{0}$ no es rechazada. 
+
+Chi-Cuadrado
+Se realiza la prueba de Chi-Cuadrado con un nivel de sinificación $\alpha = 0.05$, 10 intervalos de clase y 9 grados de libertad. Para estos valores el valor crítico es $\chi_{n-1, \alpha} = 16.92$. La hipótesis a ver que no es rechazada es 
+
+	H_{1}: \chi^2 < \chi^2_{n - 1, \alpha}
+
+El cómputo del estadístico $\chi^2_{0} = 6.088000$, entonces las hipótesis $H_{1}$ no es rechazada.
