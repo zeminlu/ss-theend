@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.10.14)  31 OCT 2011 15:46
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.10.14)  31 OCT 2011 16:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -459,20 +459,20 @@ File: histrogramaConUnaTriangular-eps-converted-to.pdf Graphic file (type pdf)
  <use histrogramaConUnaTriangular-eps-converted-to.pdf>
 Package pdftex.def Info: histrogramaConUnaTriangular-eps-converted-to.pdf used 
 on input line 226.
-(pdftex.def)             Requested size: 308.60388pt x 231.86696pt.
+(pdftex.def)             Requested size: 280.54744pt x 210.78697pt.
 
-Overfull \hbox (68.60388pt too wide) in paragraph at lines 226--227
+Overfull \hbox (40.54744pt too wide) in paragraph at lines 226--227
  [][] 
  []
 
-
+[3 <./histPosta-eps-converted-to.pdf> <./presa-eps-converted-to.pdf> <./histrog
+ramaConUnaTriangular-eps-converted-to.pdf>]
 Overfull \hbox (47.31909pt too wide) in paragraph at lines 232--234
 \T1/aer/m/it/9 Mathworks, "http://www.mathworks.com/help/techdoc/ref/ode45.html
 ",
  []
 
-[3 <./histPosta-eps-converted-to.pdf> <./presa-eps-converted-to.pdf> <./histrog
-ramaConUnaTriangular-eps-converted-to.pdf>] [4
+[4
 
 ] (./simulacion3.aux)
 
@@ -499,7 +499,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2011/texmf-
 dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2011/texmf-dist/fo
 nts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/typ
 e1/urw/times/utmb8a.pfb>
-Output written on simulacion3.pdf (4 pages, 1196477 bytes).
+Output written on simulacion3.pdf (4 pages, 1196372 bytes).
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream
