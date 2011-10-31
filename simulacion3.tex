@@ -1,5 +1,6 @@
 \documentclass{SPANISH_acm_proc_article-sp}
-
+\usepackage[latin1]{inputenc}
+\hyphenation{a-le-a-to-ri-os o-pe-ra-dor in-di-vi-duos o-pe-ra-do-res re-pre-sen-ta-do pue-de va-lo-res re-pre-sen-ta-cio-nes a-na-li-za Con-ti-nen-tal co-rres-pon-dien-te ob-ten-cio\'on pro-ba-bi-li-dad}
 \begin{document}
 
 \title{Visitando la Plataforma Continental Argentina}
@@ -62,7 +63,7 @@ se analiza en particular el caso de la zona sobre la Plataforma Continental Arge
 la especie \emph{Salm\'on de Mar (Pseudopercis semifasciata)} es capturada desde una
 latitud correspondiente a la desembocadura del R\'io Colorado, hasta el Golfo de San Juli\'an.
 El \emph{Tibur\'on Pintarrojo (Haleaeulurus bivius)} es una de las cincuenta especies que
-habitan la Plataforma Continental Argentina. Dicha especia preda al Salm\'on de Mar.
+habitan la Plataforma Continental Argentina. Dicha especie preda al Salm\'on de Mar.
 Ambas poblaciones est\'an en equilibrio din\'amico, pero no se tiene la suficiente 
 cantidad de datos para estimar el ciclo poblacional del recurso, en este caso, el salm\'on.
 El conocimiento de dicho ciclo, el cual constituye el per\'iodo de variaci\'on poblacional,
@@ -153,9 +154,9 @@ las presas y beneficiosos para predadores.\\
 
 
 \section{Estimaci\'on de la funci\'on densidad de probabilidad del Per\'iodo}
-
 \label{sec:estimacion}
-Con el objetivo de estimar la funci\'on densidad de probablidad del \emph{Per\'iodo}
+
+Con el objetivo de estimar la funci\'on densidad de probabilidad del \emph{Per\'iodo}
 se utiliza el m\'etodo de \textit{Monte Carlo}. El m\'etodo de \textit{Monte Carlo} es una metodolog\'ia
 para obtener, mediante simulaci\'on, una muestra estad\'istica y computar estimadores
 de par\'ametros para poblaciones mayores \textit{(Diaz, 2011)}. Las simulaciones fueron
@@ -166,20 +167,21 @@ funciones de valuaci\'on para calcular soluciones de precisi\'on de 4to y 5to or
 adaptativo ya que var\'ia el tama\~no de paso de acuerdo al error \textit{(Mathworks, 2011)}.
 
 Asumiendo un valor estimado de $ \hat b = 0.0035 \, $a\~nos$^{-1} $ y suponiendo que
-$ a = (0.02 \, \underline{+} \, 0.001) \, $a\~nos$^{-1}$ uniformemente distribuida,
-$ \lambda = N(1.5 \, $a\~nos$^{-1}, 0.10) $ es una funci\'on de distribuci\'on de probabilidad normal de media
-$ 1.5 \, $a\~nos$^{-1} $ con un desv\'io est\'andar porcentual del $ 10\% $ y
-$ \mu = N(1.2 \, $a\~nos$^{-1}, 0.05) $ es una funci\'on de distribuci\'on de probabilidad normal de media $ 1.2$, a\~nos$^{-1}$ con un desv\'io lineal porcentual de $5\%$ se estima
-la funci\'on densidad de probabilidad del \emph{Per\'iodo}. El resultado obtenido al correr
-15434 simulaciones se puede ver en la Figura (\ref{fig:histo}) en la cual se deduce que la funci\'on densidad de probabilidad se aproxima a una funci\'on de distribuci\'on $N(5.87$a\~nos$^{-1}, 0.19)$ con un desv\'io est\'andar del 0.19\%.\\
+\begin{itemize}
+\item $ a = (0.02 \, \underline{+} \, 0.001) \, $a\~nos$^{-1}$ uniformemente distribuida.
+\item $ \lambda = \mathcal{N}(1.5 \, $a\~nos$^{-1}, 0.10) $ es una funci\'on de distribuci\'on de probabilidad normal de media
+\item  $ \mu = \mathcal{N}(1.2 \, $a\~nos$^{-1}, 0.05) $ es una funci\'on de distribuci\'on de probabilidad normal de media $ 1.2$, a\~nos$^{-1}$ con un desv\'io lineal porcentual de $5\%$ 
+\end{itemize}
+se estima la funci\'on densidad de probabilidad del \emph{Per\'iodo}. El resultado obtenido al correr
+15434 simulaciones se puede ver en la Figura (\ref{fig:histo}) en la cual se deduce que la funci\'on densidad de probabilidad se aproxima a una funci\'on de distribuci\'on $\mathcal{N}(5.87$a\~nos$^{-1}, 0.19)$ con un desv\'io est\'andar del 0.19\%.\\
 
 En la figura (\ref{fig:presa}), la cual muestra el tama\~no de la poblaci\'on de la presa a lo largo de los a\~nos, se puede verificar que el per\'iodo se aproxima a \textit{6}.
 \\
-A partir del resultado obtenido se estima la probabilidad de que el per\'odo del ciclo
-poblacional sea menor o igual que 1, 5, 10 y 15 a\~nos obteniendose como resultado:
+A partir del resultado obtenido se estima la probabilidad de que el peri\'odo del ciclo
+poblacional sea menor o igual que 1, 5, 10 y 15 a\~nos obteniendo como resultado lo que se expresa en la tabla (\ref{fig:tableCycle}).
+
 
 \begin{table}
-
 \begin{tabular}{|c|c|c|}
 	\hline
 	A\~nos (Y) 	& 		X*		&		Probabilidad( P(X* $\leq$ Y)		\\
@@ -194,6 +196,7 @@ poblacional sea menor o igual que 1, 5, 10 y 15 a\~nos obteniendose como resulta
 	\hline
 \end{tabular}
 	\caption{Estimaciones de probabilidad del ciclo poblacional}
+	\label{fig:tableCycle}
 \end{table}
 
 \begin{figure}
@@ -210,6 +213,21 @@ poblacional sea menor o igual que 1, 5, 10 y 15 a\~nos obteniendose como resulta
 \caption{Tama\~no de la poblaci\'on de la presa en funci\'on del tiempo}
 \end{figure}
 
+\section{Modificaci\'on de una funci\'on de distribuci\'on }
+Se cambia la distribuci\'on de uno de los par\'ametros que representan las interacciones entre las dos espcecies.
+ El par\'ametro en cuesti\'on es $\mu$ y se le asigna una funci\'on de distribuci\'on triangular $\mathcal{T}(0,2,1)$.
+ Se estima la funci\'on de densidad de probabilidad del \emph{Per\'iodo} utilizando un histograma que es una herramienta provista estad\'istica descriptiva. 
+ \\
+ La figura (\ref{fig:histoTriangulo}) es el resultado obtenido luego de correr 5772 simulaciones para obtener el per\'iodo.
+
+
+\begin{figure}
+\centering
+\epsfig{file=histrogramaConUnaTriangular.eps, scale=0.55}
+\caption{Frecuencia de aparici\'on de los n\'umeros pseudo-aleatorio que representan a lo Per\'iodo}
+\label{fig:histoTriangulo}
+\end{figure} 
+ 
 \section*{REFERENCIAS}
 \textit{Diaz, "Simulaci\'on de Montecarlo", 2011} \\
 \textit{Mathworks, "http://www.mathworks.com/help/techdoc/ref/ode45.html", 2011}
