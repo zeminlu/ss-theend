@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  30 OCT 2011 20:44
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  30 OCT 2011 21:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -307,7 +307,7 @@ Overfull \hbox (1.57817pt too wide) in paragraph at lines 46--46
  []
 
 
-Overfull \hbox (3.7598pt too wide) in paragraph at lines 92--93
+Overfull \hbox (3.7598pt too wide) in paragraph at lines 90--91
 \T1/aer/m/n/9 con la fre-cuen-cia de apari-ción de los números pseudo-aleatorio
 
  []
@@ -320,17 +320,17 @@ Package epstopdf Info: Source file: <histRandom.eps>
 (epstopdf)                    size: 5679 bytes
 (epstopdf)             Command: <repstopdf --outfile=histRandom-eps-converted-t
 o.pdf histRandom.eps>
-(epstopdf)             \includegraphics on input line 96.
+(epstopdf)             \includegraphics on input line 94.
 Package epstopdf Info: Output file is already uptodate.
 <histRandom-eps-converted-to.pdf, id=1, 449.68pt x 338.26375pt>
 File: histRandom-eps-converted-to.pdf Graphic file (type pdf)
 
 <use histRandom-eps-converted-to.pdf>
-Package pdftex.def Info: histRandom-eps-converted-to.pdf used on input line 96.
+Package pdftex.def Info: histRandom-eps-converted-to.pdf used on input line 94.
 
 (pdftex.def)             Requested size: 247.32475pt x 186.04562pt.
 
-Overfull \hbox (7.32475pt too wide) in paragraph at lines 96--97
+Overfull \hbox (7.32475pt too wide) in paragraph at lines 94--95
  [][] 
  []
 
@@ -342,17 +342,17 @@ Package epstopdf Info: Source file: <randomize2D.eps>
 (epstopdf)                    size: 533516 bytes
 (epstopdf)             Command: <repstopdf --outfile=randomize2D-eps-converted-
 to.pdf randomize2D.eps>
-(epstopdf)             \includegraphics on input line 103.
+(epstopdf)             \includegraphics on input line 101.
 Package epstopdf Info: Output file is already uptodate.
 <randomize2D-eps-converted-to.pdf, id=2, 449.68pt x 338.26375pt>
 File: randomize2D-eps-converted-to.pdf Graphic file (type pdf)
 
 <use randomize2D-eps-converted-to.pdf>
 Package pdftex.def Info: randomize2D-eps-converted-to.pdf used on input line 10
-3.
+1.
 (pdftex.def)             Requested size: 247.32475pt x 186.04562pt.
 
-Overfull \hbox (7.32475pt too wide) in paragraph at lines 103--104
+Overfull \hbox (7.32475pt too wide) in paragraph at lines 101--102
  [][] 
  []
 
@@ -364,17 +364,17 @@ Package epstopdf Info: Source file: <randomize3D.eps>
 (epstopdf)                    size: 519212 bytes
 (epstopdf)             Command: <repstopdf --outfile=randomize3D-eps-converted-
 to.pdf randomize3D.eps>
-(epstopdf)             \includegraphics on input line 110.
+(epstopdf)             \includegraphics on input line 108.
 Package epstopdf Info: Output file is already uptodate.
 <randomize3D-eps-converted-to.pdf, id=3, 449.68pt x 338.26375pt>
 File: randomize3D-eps-converted-to.pdf Graphic file (type pdf)
 
 <use randomize3D-eps-converted-to.pdf>
-Package pdftex.def Info: randomize3D-eps-converted-to.pdf used on input line 11
-0.
+Package pdftex.def Info: randomize3D-eps-converted-to.pdf used on input line 10
+8.
 (pdftex.def)             Requested size: 247.32475pt x 186.04562pt.
 
-Overfull \hbox (7.32475pt too wide) in paragraph at lines 110--111
+Overfull \hbox (7.32475pt too wide) in paragraph at lines 108--109
  [][] 
  []
 
@@ -382,23 +382,23 @@ Overfull \hbox (7.32475pt too wide) in paragraph at lines 110--111
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 149--155
+Underfull \hbox (badness 10000) in paragraph at lines 147--153
 
  []
 
 
-Overfull \hbox (5.22748pt too wide) in paragraph at lines 157--157
+Overfull \hbox (5.22748pt too wide) in paragraph at lines 155--155
 \secfnt DAD DE PROB-A-BIL-I-DAD DEL PERÍODO 
  []
 
 
-Overfull \hbox (16.41443pt too wide) in paragraph at lines 170--177
+Overfull \hbox (16.41443pt too wide) in paragraph at lines 168--175
 []\T1/aer/m/n/9 Asumiendo un valor es-ti-mado de $[] \OT1/cmr/m/n/9 = 0\OML/cmm
 /m/it/9 :\OT1/cmr/m/n/9 0035 $\T1/aer/m/n/9 años$[]$ y suponiendo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--177
+Underfull \hbox (badness 10000) in paragraph at lines 168--175
 
  []
 
@@ -412,14 +412,14 @@ Package epstopdf Info: Source file: <histPosta.eps>
 (epstopdf)                    size: 5782 bytes
 (epstopdf)             Command: <repstopdf --outfile=histPosta-eps-converted-to
 .pdf histPosta.eps>
-(epstopdf)             \includegraphics on input line 186.
+(epstopdf)             \includegraphics on input line 202.
 Package epstopdf Info: Output file is already uptodate.
 
 <histPosta-eps-converted-to.pdf, id=38, 449.68pt x 338.26375pt>
 File: histPosta-eps-converted-to.pdf Graphic file (type pdf)
 
 <use histPosta-eps-converted-to.pdf>
-Package pdftex.def Info: histPosta-eps-converted-to.pdf used on input line 186.
+Package pdftex.def Info: histPosta-eps-converted-to.pdf used on input line 202.
 
 (pdftex.def)             Requested size: 179.8688pt x 135.30309pt.
 Package epstopdf Info: Source file: <presa.eps>
@@ -430,30 +430,31 @@ Package epstopdf Info: Source file: <presa.eps>
 (epstopdf)                    size: 9659 bytes
 (epstopdf)             Command: <repstopdf --outfile=presa-eps-converted-to.pdf
  presa.eps>
-(epstopdf)             \includegraphics on input line 193.
+(epstopdf)             \includegraphics on input line 209.
 Package epstopdf Info: Output file is already uptodate.
 
 <presa-eps-converted-to.pdf, id=39, 449.68pt x 338.26375pt>
 File: presa-eps-converted-to.pdf Graphic file (type pdf)
 
 <use presa-eps-converted-to.pdf>
-Package pdftex.def Info: presa-eps-converted-to.pdf used on input line 193.
+Package pdftex.def Info: presa-eps-converted-to.pdf used on input line 209.
 (pdftex.def)             Requested size: 179.8688pt x 135.30309pt.
 
-Overfull \hbox (47.31909pt too wide) in paragraph at lines 204--206
+Underfull \vbox (badness 1527) has occurred while \output is active []
+
+
+Overfull \hbox (47.31909pt too wide) in paragraph at lines 220--222
 \T1/aer/m/it/9 Mathworks, "http://www.mathworks.com/help/techdoc/ref/ode45.html
 ",
  []
 
-[3
-
- <./histPosta-eps-converted-to.pdf> <./presa-eps-converted-to.pdf>]
+[3 <./histPosta-eps-converted-to.pdf> <./presa-eps-converted-to.pdf>]
 (./simulacion3.aux) ) 
 Here is how much of TeX's memory you used:
- 2810 strings out of 493633
- 36344 string characters out of 3143378
+ 2811 strings out of 493633
+ 36350 string characters out of 3143378
  96773 words of memory out of 3000000
- 6036 multiletter control sequences out of 15000+200000
+ 6037 multiletter control sequences out of 15000+200000
  47315 words of font info for 64 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  41i,10n,26p,543b,246s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -469,7 +470,7 @@ l/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/
 texlive/2011/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive
 /2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2011/t
 exmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on simulacion3.pdf (3 pages, 1192150 bytes).
+Output written on simulacion3.pdf (3 pages, 1192923 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  62 compressed objects within 1 object stream

@@ -174,10 +174,28 @@ la funci\'on densidad de probabilidad del \emph{Per\'iodo}. El resultado obtenid
 15434 simulaciones se puede ver en la Figura (\ref{fig:histo}) en la cual se deduce que la funci\'on densidad de probabilidad se aproxima a una funci\'on de distribuci\'on $N(5.87$a\~nos$^{-1}, 0.19)$ con un desv\'io est\'andar del 0.19\%.\\
 
 En la figura (\ref{fig:presa}), la cual muestra el tama\~no de la poblaci\'on de la presa a lo largo de los a\~nos, se puede verificar que el per\'iodo se aproxima a \textit{6}.
-
+\\
 A partir del resultado obtenido se estima la probabilidad de que el per\'odo del ciclo
-poblacional sea menor o igual que 1, 5, 10 y 15 a\~nos obteniendose como resultado
-[INSERTE RESULTADOS AQUI] ... respectivamente.
+poblacional sea menor o igual que 1, 5, 10 y 15 a\~nos obteniendose como resultado:
+
+\begin{table}
+
+\begin{tabular}{|c|c|c|}
+	\hline
+	A\~nos (Y) 	& 		X*		&		Probabilidad( P(X* $\leq$ Y)		\\
+	\hline \hline
+	1				&	-2563.5263	&	0 \\
+	\hline
+	5				&		-458.2631 & 0 \\
+	\hline
+	10		&	2173.3158 & 1 \\
+	\hline
+	15		& 4804.8947 & 1 \\
+	\hline
+\end{tabular}
+	\caption{Estimaciones de probabilidad del ciclo poblacional}
+\end{table}
+
 \begin{figure}
 \centering
 \label{fig:histo}
@@ -191,12 +209,6 @@ poblacional sea menor o igual que 1, 5, 10 y 15 a\~nos obteniendose como resulta
 \epsfig{file=presa.eps, scale=0.4}
 \caption{Tama\~no de la poblaci\'on de la presa en funci\'on del tiempo}
 \end{figure}
-
-\section{Resultados y conclusiones}
-\label{sec:resultados}
-Inserte resultados y conclusiones aqu\'i.
-
-A partir de la figura (\ref{fig:histo}) se deduce que la variable aleatoria del per\'iodo tiene un comportamiento con distribuci´\'on \textit{Normal}. 
 
 \section*{REFERENCIAS}
 \textit{Diaz, "Simulaci\'on de Montecarlo", 2011} \\

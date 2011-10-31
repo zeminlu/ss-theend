@@ -25,6 +25,8 @@ for j=1:50000,
     end
 end
 
+h = findobj(gca,'Type','patch');
+set(h,'FaceColor','w','EdgeColor','k')
 hist(periodos, 16)
 
 %con el spectrum analisys y nysquit o como se escriba
