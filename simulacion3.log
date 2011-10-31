@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  30 OCT 2011 21:41
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.10.14)  31 OCT 2011 13:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -205,18 +205,18 @@ File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 ))) (./simulacion3.aux)
 \openout1 = `simulacion3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
-LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
  (/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count109
@@ -277,104 +277,108 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 46.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 46.
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 46.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 47.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Overfull \hbox (4.91405pt too wide) in paragraph at lines 46--46
+Overfull \hbox (4.91405pt too wide) in paragraph at lines 47--47
  []\eaddfnt gmaldona@alu.itba.edu.ar| 
  []
 
 
-Overfull \hbox (1.07411pt too wide) in paragraph at lines 46--46
+Overfull \hbox (1.07411pt too wide) in paragraph at lines 47--47
  []\eaddfnt gmarucci@alu.itba.edu.ar| 
  []
 
 
-Overfull \hbox (1.57817pt too wide) in paragraph at lines 46--46
+Overfull \hbox (1.57817pt too wide) in paragraph at lines 47--47
  []\eaddfnt sperezde@alu.itba.edu.ar| 
  []
 
 
-Overfull \hbox (3.7598pt too wide) in paragraph at lines 90--91
+LaTeX Warning: Reference `sec:resultados' on page \thepage  undefined on input 
+line 77.
+
+
+Overfull \hbox (3.7598pt too wide) in paragraph at lines 91--92
 \T1/aer/m/n/9 con la fre-cuen-cia de apari-ción de los números pseudo-aleatorio
 
  []
 
 Package epstopdf Info: Source file: <histRandom.eps>
-(epstopdf)                    date: 2011-10-30 20:04:59
+(epstopdf)                    date: 2011-10-30 21:08:07
 (epstopdf)                    size: 9413 bytes
 (epstopdf)             Output file: <histRandom-eps-converted-to.pdf>
-(epstopdf)                    date: 2011-10-30 20:05:05
+(epstopdf)                    date: 2011-10-30 21:08:07
 (epstopdf)                    size: 5679 bytes
 (epstopdf)             Command: <repstopdf --outfile=histRandom-eps-converted-t
 o.pdf histRandom.eps>
-(epstopdf)             \includegraphics on input line 94.
+(epstopdf)             \includegraphics on input line 95.
 Package epstopdf Info: Output file is already uptodate.
 <histRandom-eps-converted-to.pdf, id=1, 449.68pt x 338.26375pt>
 File: histRandom-eps-converted-to.pdf Graphic file (type pdf)
 
 <use histRandom-eps-converted-to.pdf>
-Package pdftex.def Info: histRandom-eps-converted-to.pdf used on input line 94.
+Package pdftex.def Info: histRandom-eps-converted-to.pdf used on input line 95.
 
 (pdftex.def)             Requested size: 247.32475pt x 186.04562pt.
 
-Overfull \hbox (7.32475pt too wide) in paragraph at lines 94--95
+Overfull \hbox (7.32475pt too wide) in paragraph at lines 95--96
  [][] 
  []
 
 Package epstopdf Info: Source file: <randomize2D.eps>
-(epstopdf)                    date: 2011-10-30 19:15:20
+(epstopdf)                    date: 2011-10-30 21:08:07
 (epstopdf)                    size: 185896 bytes
 (epstopdf)             Output file: <randomize2D-eps-converted-to.pdf>
-(epstopdf)                    date: 2011-10-30 19:43:48
+(epstopdf)                    date: 2011-10-30 21:08:07
 (epstopdf)                    size: 533516 bytes
 (epstopdf)             Command: <repstopdf --outfile=randomize2D-eps-converted-
 to.pdf randomize2D.eps>
-(epstopdf)             \includegraphics on input line 101.
+(epstopdf)             \includegraphics on input line 102.
 Package epstopdf Info: Output file is already uptodate.
 <randomize2D-eps-converted-to.pdf, id=2, 449.68pt x 338.26375pt>
 File: randomize2D-eps-converted-to.pdf Graphic file (type pdf)
 
 <use randomize2D-eps-converted-to.pdf>
 Package pdftex.def Info: randomize2D-eps-converted-to.pdf used on input line 10
-1.
+2.
 (pdftex.def)             Requested size: 247.32475pt x 186.04562pt.
 
-Overfull \hbox (7.32475pt too wide) in paragraph at lines 101--102
+Overfull \hbox (7.32475pt too wide) in paragraph at lines 102--103
  [][] 
  []
 
 Package epstopdf Info: Source file: <randomize3D.eps>
-(epstopdf)                    date: 2011-10-30 19:15:50
+(epstopdf)                    date: 2011-10-30 21:08:07
 (epstopdf)                    size: 467274 bytes
 (epstopdf)             Output file: <randomize3D-eps-converted-to.pdf>
-(epstopdf)                    date: 2011-10-30 19:43:49
+(epstopdf)                    date: 2011-10-30 21:08:07
 (epstopdf)                    size: 519212 bytes
 (epstopdf)             Command: <repstopdf --outfile=randomize3D-eps-converted-
 to.pdf randomize3D.eps>
-(epstopdf)             \includegraphics on input line 108.
+(epstopdf)             \includegraphics on input line 109.
 Package epstopdf Info: Output file is already uptodate.
 <randomize3D-eps-converted-to.pdf, id=3, 449.68pt x 338.26375pt>
 File: randomize3D-eps-converted-to.pdf Graphic file (type pdf)
 
 <use randomize3D-eps-converted-to.pdf>
 Package pdftex.def Info: randomize3D-eps-converted-to.pdf used on input line 10
-8.
+9.
 (pdftex.def)             Requested size: 247.32475pt x 186.04562pt.
 
-Overfull \hbox (7.32475pt too wide) in paragraph at lines 108--109
+Overfull \hbox (7.32475pt too wide) in paragraph at lines 109--110
  [][] 
  []
 
@@ -382,95 +386,99 @@ Overfull \hbox (7.32475pt too wide) in paragraph at lines 108--109
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 147--153
+Underfull \hbox (badness 10000) in paragraph at lines 148--154
 
  []
 
 
-Overfull \hbox (5.22748pt too wide) in paragraph at lines 155--155
+Overfull \hbox (5.22748pt too wide) in paragraph at lines 156--156
 \secfnt DAD DE PROB-A-BIL-I-DAD DEL PERÍODO 
  []
 
 
-Overfull \hbox (16.41443pt too wide) in paragraph at lines 168--175
+Overfull \hbox (16.41443pt too wide) in paragraph at lines 169--176
 []\T1/aer/m/n/9 Asumiendo un valor es-ti-mado de $[] \OT1/cmr/m/n/9 = 0\OML/cmm
 /m/it/9 :\OT1/cmr/m/n/9 0035 $\T1/aer/m/n/9 años$[]$ y suponiendo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--175
+Underfull \hbox (badness 10000) in paragraph at lines 169--176
 
  []
 
 [2 <./histRandom-eps-converted-to.pdf> <./randomize2D-eps-converted-to.pdf> <./
 randomize3D-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <histPosta.eps>
-(epstopdf)                    date: 2011-10-30 20:08:01
+(epstopdf)                    date: 2011-10-30 21:08:07
 (epstopdf)                    size: 10353 bytes
 (epstopdf)             Output file: <histPosta-eps-converted-to.pdf>
-(epstopdf)                    date: 2011-10-30 20:09:36
+(epstopdf)                    date: 2011-10-30 21:08:07
 (epstopdf)                    size: 5782 bytes
 (epstopdf)             Command: <repstopdf --outfile=histPosta-eps-converted-to
 .pdf histPosta.eps>
-(epstopdf)             \includegraphics on input line 202.
+(epstopdf)             \includegraphics on input line 203.
 Package epstopdf Info: Output file is already uptodate.
 
 <histPosta-eps-converted-to.pdf, id=38, 449.68pt x 338.26375pt>
 File: histPosta-eps-converted-to.pdf Graphic file (type pdf)
 
 <use histPosta-eps-converted-to.pdf>
-Package pdftex.def Info: histPosta-eps-converted-to.pdf used on input line 202.
+Package pdftex.def Info: histPosta-eps-converted-to.pdf used on input line 203.
 
 (pdftex.def)             Requested size: 179.8688pt x 135.30309pt.
 Package epstopdf Info: Source file: <presa.eps>
-(epstopdf)                    date: 2011-10-30 19:53:29
+(epstopdf)                    date: 2011-10-30 21:08:07
 (epstopdf)                    size: 11996 bytes
 (epstopdf)             Output file: <presa-eps-converted-to.pdf>
-(epstopdf)                    date: 2011-10-30 20:08:14
+(epstopdf)                    date: 2011-10-30 21:08:07
 (epstopdf)                    size: 9659 bytes
 (epstopdf)             Command: <repstopdf --outfile=presa-eps-converted-to.pdf
  presa.eps>
-(epstopdf)             \includegraphics on input line 209.
+(epstopdf)             \includegraphics on input line 210.
 Package epstopdf Info: Output file is already uptodate.
 
 <presa-eps-converted-to.pdf, id=39, 449.68pt x 338.26375pt>
 File: presa-eps-converted-to.pdf Graphic file (type pdf)
 
 <use presa-eps-converted-to.pdf>
-Package pdftex.def Info: presa-eps-converted-to.pdf used on input line 209.
+Package pdftex.def Info: presa-eps-converted-to.pdf used on input line 210.
 (pdftex.def)             Requested size: 179.8688pt x 135.30309pt.
 
 Underfull \vbox (badness 1527) has occurred while \output is active []
 
 
-Overfull \hbox (47.31909pt too wide) in paragraph at lines 220--222
+Overfull \hbox (47.31909pt too wide) in paragraph at lines 215--217
 \T1/aer/m/it/9 Mathworks, "http://www.mathworks.com/help/techdoc/ref/ode45.html
 ",
  []
 
 [3 <./histPosta-eps-converted-to.pdf> <./presa-eps-converted-to.pdf>]
-(./simulacion3.aux) ) 
+(./simulacion3.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2811 strings out of 493633
- 36350 string characters out of 3143378
- 96773 words of memory out of 3000000
- 6037 multiletter control sequences out of 15000+200000
+ 2821 strings out of 493633
+ 36459 string characters out of 3143376
+ 96802 words of memory out of 3000000
+ 6036 multiletter control sequences out of 15000+200000
  47315 words of font info for 64 fonts, out of 3000000 for 9000
- 831 hyphenation exceptions out of 8191
+ 842 hyphenation exceptions out of 8191
  41i,10n,26p,543b,246s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/base/8
-r.enc}</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.
-pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pf
-b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb>
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></u
-sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/
-local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/lo
-cal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/loca
-l/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/
-texlive/2011/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive
-/2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2011/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on simulacion3.pdf (3 pages, 1192923 bytes).
+{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texli
+ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive
+/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/20
+11/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2011/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2011/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2011/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2011/texmf-
+dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2011/texmf-dist/fo
+nts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb>
+Output written on simulacion3.pdf (3 pages, 1192132 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  62 compressed objects within 1 object stream
